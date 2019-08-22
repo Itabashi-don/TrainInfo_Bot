@@ -1,17 +1,22 @@
 {
-	"name": "traininfo_bot",
-	"version": "1.0.0",
+	"name": "itabashi-don_traininfo-bot",
+	"version": "1.0.1",
 	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
-
+	"keywords": [
+		"Mastodon",
+		"Mastodon-Bot",
+		"Train"
+	],
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-
-	"author": { "name": "Itabashi-don", "url": "https://itabashi.0j0.jp/" },
+	"author": {
+		"name": "Itabashi-don",
+		"url": "https://itabashi.0j0.jp/"
+	},
 	"license": "MIT",
 	"homepage": "https://github.com/Itabashi-don/TrainInfo_Bot#readme",
-
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Itabashi-don/TrainInfo_Bot.git"
@@ -19,10 +24,9 @@
 	"bugs": {
 		"url": "https://github.com/Itabashi-don/TrainInfo_Bot/issues"
 	},
-
-	"keywords": [
-		"Mastodon",
-		"Mastodon-Bot",
-		"Train"
-	]
+	"dependencies": {
+		"cheerio-httpcli": "^0.7.4",
+		"express": "^4.17.1",
+		"masto": "^2.5.4"
+	}
 }
