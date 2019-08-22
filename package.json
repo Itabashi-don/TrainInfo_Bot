@@ -1,6 +1,6 @@
 {
 	"name": "itabashi-don_traininfo-bot",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
 	"keywords": [
 		"Mastodon",
@@ -9,6 +9,7 @@
 	],
 	"main": "index.js",
 	"scripts": {
+		"build": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": {
