@@ -1,6 +1,6 @@
 {
 	"name": "itabashi-don_traininfo-bot",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
 	"keywords": [
 		"Mastodon",
@@ -27,7 +27,6 @@
 	},
 	"dependencies": {
 		"cheerio-httpcli": "^0.7.4",
-		"express": "^4.17.1",
 		"masto": "^2.5.4"
 	}
 }
