@@ -3,6 +3,8 @@ const package = require("./../package.json");
 
 
 /**
+ * TrainInfo_Botのバージョンを返します
+ * 
  * @param {NowRequest} req
  * @param {NowResponse} res
  */
