@@ -1,0 +1,28 @@
+{
+	"name": "traininfo_bot",
+	"version": "1.0.0",
+	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
+
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+
+	"author": { "name": "Itabashi-don", "url": "https://itabashi.0j0.jp/" },
+	"license": "MIT",
+	"homepage": "https://github.com/Itabashi-don/TrainInfo_Bot#readme",
+
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Itabashi-don/TrainInfo_Bot.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Itabashi-don/TrainInfo_Bot/issues"
+	},
+
+	"keywords": [
+		"Mastodon",
+		"Mastodon-Bot",
+		"Train"
+	]
+}
