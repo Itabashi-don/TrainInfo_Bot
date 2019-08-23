@@ -3,7 +3,14 @@
 	"version": 2,
 	"scope": "itabashi-don",
 
-	"routes": [],
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"methods": ["POST"],
+
+			"status": 401
+		}
+	],
 
 	"env": {
 		"BOT_INSTANCE": "@bot-instance",
