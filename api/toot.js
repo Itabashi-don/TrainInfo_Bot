@@ -1,4 +1,5 @@
 const Mastodon = require("./../lib/Mastodon");
+const { returnData } = require("./../lib/EndPoint");
 
 
 
@@ -9,9 +10,9 @@ const Mastodon = require("./../lib/Mastodon");
  * @param {NowResponse} res
  */
 module.exports = async (req, res) => {
-	const client = await Mastodon.getMastoInstance();
+	const mastoClient = await Mastodon.getMastoInstance();
 
-	const status = await client.createStatus({
+	const status = await mastoClient.createStatus({
 		status: [
 			"This toot was tooted by TrainInfo_Bot."
 		].join("\n"),
@@ -19,5 +20,5 @@ module.exports = async (req, res) => {
 		visibility: "unlisted"
 	});
 
-	res.json(status);
+	return returnData(res, null, status);
 };

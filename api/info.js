@@ -1,7 +1,7 @@
+const package = require("./../package.json");
+
 const Mastodon = require("./../lib/Mastodon");
 const { returnData } = require("./../lib/EndPoint");
-
-const package = require("./../package.json");
 
 
 
@@ -12,8 +12,8 @@ const package = require("./../package.json");
  * @param {NowResponse} res
  */
 module.exports = async (req, res) => {
-	const client = await Mastodon.getMastoInstance();
-	const account = await client.verifyCredentials();
+	const mastoClient = await Mastodon.getMastoInstance();
+	const account = await mastoClient.verifyCredentials();
 
 	const { id, acct, display_name, url } = account;
 
