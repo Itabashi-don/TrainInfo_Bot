@@ -4,7 +4,7 @@ const { INSTANCE, TOKEN } = process.env;
 
 
 /**
- * 環境変数内のオプションを用いてトゥートします
+ * テストトゥートを行います
  * 
  * @param {NowRequest} req
  * @param {NowResponse} res
