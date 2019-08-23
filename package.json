@@ -1,6 +1,6 @@
 {
 	"name": "itabashi-don_traininfo-bot",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
 	"keywords": [
 		"Mastodon",
@@ -13,7 +13,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": {
-		"name": "Itabashi-don",
+		"name": "板橋丼(Itabashi-don)",
 		"url": "https://itabashi.0j0.jp/"
 	},
 	"license": "MIT",
