@@ -1,5 +1,4 @@
-const { Masto } = require("masto");
-const { INSTANCE, TOKEN } = process.env;
+const Mastodon = require("./../lib/Mastodon");
 
 
 
@@ -10,10 +9,7 @@ const { INSTANCE, TOKEN } = process.env;
  * @param {NowResponse} res
  */
 module.exports = async (req, res) => {
-	const client = await Masto.login({
-		uri: INSTANCE,
-		accessToken: TOKEN
-	});
+	const client = await Mastodon.getMastoInstance();
 
 	const status = await client.createStatus({
 		status: [

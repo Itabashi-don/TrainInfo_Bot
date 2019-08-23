@@ -3,5 +3,10 @@
 	"version": 2,
 	"scope": "itabashi-don",
 
-	"routes": []
+	"routes": [],
+
+	"env": {
+		"BOT_INSTANCE": "@bot-instance",
+		"BOT_TOKEN": "@bot-token"
+	}
 }
