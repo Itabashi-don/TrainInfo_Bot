@@ -14,7 +14,7 @@ const scrapeClient = require("cheerio-httpcli");
 		const status = operation.last().text().trim();
 		const detail = (await $doc(elem).click()).$(".corner_block_content > ul > li .corner_block_row_detail_d").text().trim();
 
-		return { name, status, date: `${date} ${time}`, detail };
+		return { name, status, detail, createdAt: `${date} ${time}` };
 	}).toArray();
 
 	console.log(await Promise.all(operations));

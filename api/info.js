@@ -6,7 +6,7 @@ const { returnData } = require("./../lib/EndPoint");
 
 
 /**
- * TrainInfo_Botのバージョンを返します
+ * TrainInfo_Botの情報を返す
  * 
  * @param {NowRequest} req
  * @param {NowResponse} res
