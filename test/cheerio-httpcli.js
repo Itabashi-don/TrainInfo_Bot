@@ -7,17 +7,15 @@ const scrapeClient = require("cheerio-httpcli");
 	const table = $(".corner_block.top_pad");
 
 	const date = table.children(".corner_block_header3").text().trim();
-	const railways = table.find(".corner_block_content > ul > li").map((i, elem) => $(elem).find("div > a"));
-
-	railways.each((i, elem) => {
+	const operations = table.find(".corner_block_content > ul > li a").map((i, elem) => {
 		const operation = $(elem).contents();
 
 		const time = operation.first().text().trim();
-		const railwayName = $(elem).children(".accent_color").text();
+		const railway = $(elem).children(".accent_color").text();
 		const status = operation.last().text().trim();
 
-		console.log([
-			`${date} ${time} ${railwayName} ${status}`
-		].join("\n"));
+		return { railway, status, date: `${date} ${time}` };
 	});
+
+	operations.each((i, elem) => console.log(elem));
 })();
