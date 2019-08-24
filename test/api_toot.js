@@ -5,7 +5,7 @@ const Mastodon = require("./../lib/Mastodon");
 
 
 
-(async () => {
+(async (req, res) => {
 	const mastoClient = await Mastodon.getMastoInstance();
 	const statuses = [];
 

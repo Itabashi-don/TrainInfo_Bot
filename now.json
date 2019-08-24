@@ -8,7 +8,7 @@
 			"src": "/api/(.*)",
 			"methods": ["POST"],
 
-			"status": 401
+			"status": 405
 		}
 	],
 

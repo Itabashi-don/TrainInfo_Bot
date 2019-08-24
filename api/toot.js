@@ -5,7 +5,7 @@ const { returnData } = require("./../lib/EndPoint");
 
 
 /**
- * テストトゥートを行います
+ * テストトゥートを行う
  * 
  * @param {NowRequest} req
  * @param {NowResponse} res

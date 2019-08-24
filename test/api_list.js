@@ -1,9 +1,9 @@
-require("./../lib/Typedef");
 const scrapeClient = require("cheerio-httpcli");
+require("./../lib/Typedef");
 
 
 
-(async () => {
+(async (req, res) => {
 	const $doc = (await scrapeClient.fetch("http://www.jikokuhyo.co.jp/news/list")).$;
 
 	const table = $doc(".corner_block.top_pad");
