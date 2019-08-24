@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
 
 		const operation = { name, status, createdAt: `${date} ${time}` };
 
-		if (req.query.simple && req.query.simple.toLowerCase() !== "false") {
+		if (req.query.simple != null && req.query.simple.toLowerCase() !== "false") {
 			return operation;
 		} else {
 			const detail = (await $doc(elem).click()).$(".corner_block_content > ul > li .corner_block_row_detail_d").text().trim();
