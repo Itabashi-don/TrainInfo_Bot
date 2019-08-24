@@ -1,6 +1,6 @@
 {
 	"name": "itabashi-don_traininfo-bot",
-	"version": "1.0.19",
+	"version": "1.0.20",
 	"description": "鉄道運行情報を発信する、Mastodon用のBotです。",
 	"keywords": [
 		"Mastodon",
