@@ -11,11 +11,11 @@ const scrapeClient = require("cheerio-httpcli");
 		const operation = $(elem).contents();
 
 		const time = operation.first().text().trim();
-		const railway = $(elem).children(".accent_color").text();
+		const name = $(elem).children(".accent_color").text();
 		const status = operation.last().text().trim();
 
-		return { railway, status, date: `${date} ${time}` };
-	});
+		return { name, status, date: `${date} ${time}` };
+	}).toArray();
 
-	operations.each((i, elem) => console.log(elem));
+	console.log(operations);
 })();

@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
 		const status = operation.last().text().trim();
 
 		return { railway, status, date: `${date} ${time}` };
-	});
+	}).toArray();
 
 	return returnData(res, null, operations);
 };
