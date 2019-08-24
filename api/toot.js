@@ -14,17 +14,20 @@ module.exports = async (req, res) => {
 	const mastoClient = await Mastodon.getMastoInstance();
 	const statuses = [];
 
-	const operations = await require("./list")();
+	const operations = (await require("./list")()).data;
 	for (let i = 0; i < operations.length; i++) {
 		const operation = operations[i];
+
+		const { name, status, detail, createdAt } = operation;
+		const date = createdAt.split(" ")[1];
 
 		statuses[i] = new Promise(resolve => {
 			setTimeout(async () => {
 				resolve(
 					await mastoClient.createStatus({
 						status: [
-							`◎${operation.name}【${operation.status}】 [${operation.createdAt}]`,
-							operation.detail
+							`【${name}｜${status}】[${date}]`,
+							detail
 						].join("\n"),
 		
 						visibility: "unlisted"
