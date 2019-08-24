@@ -11,7 +11,7 @@ const { returnData } = require("./../lib/EndPoint");
  * @param {NowResponse} res
  */
 module.exports = async (req, res) => {
-	const result = await scrapeClient.fetch("http://www.jikokuhyo.co.jp/news/list");
+	const result = (await scrapeClient.fetch("http://www.jikokuhyo.co.jp/news/list")).body;
 
 	return returnData(res, null, result);
 };
