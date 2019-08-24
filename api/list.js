@@ -1,5 +1,6 @@
 const scrapeClient = require("cheerio-httpcli");
 
+require("./../lib/Typedef");
 const { returnData } = require("./../lib/EndPoint");
 
 
@@ -16,6 +17,7 @@ module.exports = async (req, res) => {
 	const table = $doc(".corner_block.top_pad");
 	const date = table.children(".corner_block_header3").text().trim();
 
+	/** @type {Promise<Operation>[]} */
 	const operations = table.find(".corner_block_content > ul > li a").map(async (i, elem) => {
 		const info = $doc(elem).contents();
 
@@ -23,9 +25,10 @@ module.exports = async (req, res) => {
 		const name = $doc(elem).children(".accent_color").text();
 		const status = info.last().text().trim();
 
+		/** @type {Operation} */
 		const operation = { name, status, createdAt: `${date} ${time}` };
 
-		if (req.query.simple != null && req.query.simple.toLowerCase() !== "false") {
+		if (req && req.query.simple != null && req.query.simple.toLowerCase() !== "false") {
 			return operation;
 		} else {
 			const detail = (await $doc(elem).click()).$(".corner_block_content > ul > li .corner_block_row_detail_d").text().trim();

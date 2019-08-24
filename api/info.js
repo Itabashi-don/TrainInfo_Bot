@@ -1,5 +1,6 @@
 const package = require("./../package.json");
 
+require("./../lib/Typedef");
 const Mastodon = require("./../lib/Mastodon");
 const { returnData } = require("./../lib/EndPoint");
 

@@ -1,20 +1,15 @@
+require("dotenv").config();
+
 require("./../lib/Typedef");
 const Mastodon = require("./../lib/Mastodon");
-const { returnData } = require("./../lib/EndPoint");
 
 
 
-/**
- * テストトゥートを行います
- * 
- * @param {NowRequest} req
- * @param {NowResponse} res
- */
-module.exports = async (req, res) => {
+(async () => {
 	const mastoClient = await Mastodon.getMastoInstance();
 	const statuses = [];
 
-	const operations = await require("./list")();
+	const operations = (await require("./../api/list")()).data;
 	for (let i = 0; i < operations.length; i++) {
 		const operation = operations[i];
 
@@ -23,7 +18,7 @@ module.exports = async (req, res) => {
 				resolve(
 					await mastoClient.createStatus({
 						status: [
-							`◎${operation.name}【${operation.status}】 [${operation.createdAt}]`,
+							`◎${operation.name}【${operation.status}】 [${operation.createdAt.split(" ")[1]}]`,
 							operation.detail
 						].join("\n"),
 		
@@ -33,6 +28,6 @@ module.exports = async (req, res) => {
 			}, 5000 * i);
 		});
 	}
-
-	return returnData(res, null, await Promise.all(statuses));
-};
+	
+	console.log(await Promise.all(statuses));
+})();
