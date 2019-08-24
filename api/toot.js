@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
 						visibility: "unlisted"
 					})
 				);
-			}, 5000 * i);
+			}, 1000 * i);
 		});
 	}
 
