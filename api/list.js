@@ -13,6 +13,6 @@ const { returnData } = require("./../lib/EndPoint");
  * @param {NowResponse} res
  */
 module.exports = async (req, res) => {
-	const operations = await OperationHelper.getOperations();
+	const operations = await OperationHelper.getOperations(req && req.query.simple != null && req.query.simple.toLowerCase() !== "false");
 	return returnData(res, null, operations);
 };
